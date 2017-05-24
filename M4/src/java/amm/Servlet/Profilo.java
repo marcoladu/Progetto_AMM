@@ -5,7 +5,6 @@
  */
 package amm.Servlet;
 
-import amm.Classi.PostFactory;
 import amm.Classi.UtentiFactory;
 import amm.Classi.Utenti;
 import java.io.IOException;
@@ -14,14 +13,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import javax.servlet.annotation.WebServlet;
+
 
 /**
  *
@@ -64,52 +56,13 @@ public class Profilo extends HttpServlet {
                     temp.setData(request.getParameter("data"));
                     temp.setPsw(request.getParameter("psw"));
                     
-                    UtentiFactory.getInstance().modUtente(temp);
+                    UtentiFactory.getInstance().modUtente(temp, user.getId());
+                    
                     
                     request.setAttribute("modificatoMessage", true);
                 }
                 
                 request.setAttribute("user", user);
-                
-                /*try{
-                        // path, username, password
-                        Connection conn = DriverManager.getConnection(dbConnection, "amm", "amm");
-
-                        String query = 
-                                  "select * from utenti "
-                                + "where utenti_id = ?";
-
-                        // Prepared Statement
-                        PreparedStatement stmt = conn.prepareStatement(query);
-
-                        // Si associano i valori
-                        stmt.setInt(1, id);
-
-                        // Esecuzione query
-                        ResultSet res = stmt.executeQuery();
-
-                        // ciclo sulle righe restituite
-                        if (res.next()) {
-                            Utenti current = new Utenti();
-                            current.setId(res.getInt("utenti_id"));
-                            current.setNomeUtente(res.getString("utenti_nome"));
-                            current.setCognomeUtente(res.getString("razza"));
-                            current.setUrlImg(res.getString("utenti_urlImg"));
-                            current.setFraseBenv(res.getString("utenti_frase"));
-                            current.setData(res.getString("utenti_data"));
-                            current.setPsw(res.getString("utenti_password"));
-
-                            stmt.close();
-                            conn.close();
-                            request.setAttribute("user", current);
-                        }
-
-                        stmt.close();
-                        conn.close();
-
-                    }catch (SQLException e) {
-                        e.printStackTrace();
-                    }*/
             
                 request.getRequestDispatcher("profilo.jsp").forward(request, response);
                 return;

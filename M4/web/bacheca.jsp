@@ -88,7 +88,7 @@
                                 <div class="datapost">
 
                                     <c:if test="${post.textPost != null}">
-                                        ${n}${post.textPost}<br/>
+                                        ${post.textPost}<br/>
                                     </c:if>
 
                                     <c:if test="${post.imgPost != null}">

@@ -147,7 +147,7 @@ public class UtentiFactory {
             return -1;
     }
     
-    public void modUtente(Utenti utente){
+    public void modUtente(Utenti utente, int id){
         
         try{
                         
@@ -172,6 +172,7 @@ public class UtentiFactory {
             stmt.setString(4, utente.getFraseBenv());
             stmt.setString(5, utente.getData());
             stmt.setString(6, utente.getPsw());
+            stmt.setInt(7, id);
                         
             int rows = stmt.executeUpdate();
             
