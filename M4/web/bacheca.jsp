@@ -78,9 +78,9 @@
                     </c:if>
                     
                     <c:if test="${nessunPost != true}">
-                        <div id="divPost">
-                        <c:forEach var="post" items="${posts}">
                         
+                        <c:forEach var="post" items="${posts}">
+                            <div id="divPost">
                             
 
                                 <div class="imgprofilo"><img src="${post.user.urlImg}" alt="immagine profilo"/></div>
@@ -88,7 +88,7 @@
                                 <div class="datapost">
 
                                     <c:if test="${post.textPost != null}">
-                                        ${post.textPost}<br/>
+                                        ${n}${post.textPost}<br/>
                                     </c:if>
 
                                     <c:if test="${post.imgPost != null}">

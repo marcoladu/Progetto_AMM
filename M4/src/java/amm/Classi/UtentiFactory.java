@@ -174,6 +174,9 @@ public class UtentiFactory {
             stmt.setString(6, utente.getPsw());
                         
             int rows = stmt.executeUpdate();
+            
+            stmt.close();
+            conn.close();
                         
         }catch (SQLException e) {
             e.printStackTrace();

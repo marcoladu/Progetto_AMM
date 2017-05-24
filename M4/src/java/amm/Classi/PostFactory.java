@@ -116,13 +116,17 @@ public class PostFactory {
             // Esecuzione query
             ResultSet res = stmt.executeQuery();
             
+            int idPropr;
+            Utenti user;
+            Post current;
+            
             // ciclo sulle righe restituite
-            if (res.next()) {
-                int idPropr = res.getInt("post_idProprietario");
+            while (res.next()) {
+                idPropr = res.getInt("post_idProprietario");
                 
-                Utenti user = UtentiFactory.getInstance().getPerId(idPropr);
+                user = UtentiFactory.getInstance().getPerId(idPropr);
                 
-                Post current = new Post();
+                current = new Post();
                 current.setId(res.getInt("post_id"));
                 current.setUser(user);
                 current.setUrlImg(user.getUrlImg());
@@ -130,20 +134,18 @@ public class PostFactory {
                 current.setImgPost(res.getString("post_img"));
                 current.setLinkPost(res.getString("post_link"));
                 
-                stmt.close();
-                conn.close();
                 tmp.add(current);
             }
             
             stmt.close();
             conn.close();
-            return tmp;
+            
             
         }catch (SQLException e) {
             e.printStackTrace();
         }
         
-        return null;
+        return tmp;
     }
     
     public void addPost(Post post){
