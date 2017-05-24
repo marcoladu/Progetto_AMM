@@ -1,0 +1,28 @@
+ENTITA
+Utenti	(id	nome	cognome	urlimg	frase	data	password)
+Post	(id	*idScrittore	idBacheca	text	img	link)	
+Gruppi	(id	nome)										
+Utenti-Gruppi	(*idUtente	*idGruppo)	
+
+* = chiave esterna
+Utenti-Gruppi è una entità per la relazione utenti gruppi che ha cardinalità molti a molti				
+							
+RELAZIONI												
+Utenti	Gruppi	MxM					
+Utenti	Post	1xM										
+Post	Gruppi	1xM									
+
+Per ogni post quanti utenti(proprietario)? uno
+Per ogni utenti quanti post? molti
+
+utenti---===post
+
+Per ogni utente quanti gruppi? molti
+Per ogni gruppo quanti utenti? molti
+
+utenti===gruppi
+
+Per ogni post quanti gruppi (proprieario) uno
+Per ogni gruppo quanti post? molti
+
+gruppi---===post

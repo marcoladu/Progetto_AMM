@@ -1,0 +1,930 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 2-apr-2017, 22.56.41
+    Author     : Marco Ladu
+*/
+
+@media only screen and (min-width: 1024px) {
+    #barraNavigazione {
+        margin-top: 15px;
+        float: left;
+        position: fixed;
+        z-index: 2;
+    }
+    
+    nav ol, nav li {
+        display: inline-block;
+        list-style-type: none;
+    }
+
+    nav ol {
+        -webkit-padding-start: 10px;
+    }
+
+    nav li {
+        padding-bottom: 10px;
+        padding-top: 10px;
+        padding-left: 5px;
+        padding-right: 5px;
+        margin-left: 20px;
+        border-right: 2px solid brown;
+        border-left: 2px solid brown;
+        border-bottom: 2px solid brown;
+        border-radius: 5px;
+        box-shadow: 3px 6px 3px 0px rgba(0,0,0,0.62);
+        text-align: center;
+        font-size: 20px;
+        width: 138px;
+        background-color: white;
+    }
+    
+    .titolo {
+        width: 230px;
+        margin-right: 20px;
+        font-weight: bold;
+        margin-left: 0px;
+    }
+    
+    #sidebar1 {
+        width: 230px;
+        height: auto;
+        float: left;
+        padding: 5px;
+        margin-top: 100px;
+        margin-left: 10px;
+        margin-bottom: 20px;
+        border: 2px solid brown;
+        border-radius: 5px;
+        box-shadow: 3px 6px 3px 0px rgba(0,0,0,0.62);
+        font-weight: bold;
+        background-color: white;
+    }
+    
+    #content {
+        float: left;
+        width: 678px;
+        margin-top: 100px;
+        margin-left: 45px;
+        background-color: white;
+    }
+    
+    #formprofilo {
+        height: 400px;
+    }
+    
+    label.labelprof {
+        width: 181px;
+        margin-left: 100px;
+    }
+    
+    input.inputprof {
+        font-size: 18px;
+    }
+    
+    input#data {
+        width: 219px;
+    }
+    
+    input#bottoneinvio {
+        width: 400px;
+        margin-left: 125px;
+    }
+    
+    #clear.clearLogin {
+        height: 353px;
+    }
+
+    #clear.clearProfilo {
+        height: 593px;
+    }
+    
+    #clear.clearBacheca {
+        height: 593px;
+    }
+    
+    #formprofilo.formlogin {
+        position: absolute;
+        top: 90px;
+        left: 300px;
+        width: 678px;
+        height: 250px;
+        background-color: white;
+    }
+    
+    #WarningLogin {
+        position: absolute;
+        top: 110px;
+        left: 500px;
+    }
+    
+    div#modifMsg {
+        position: absolute;
+        top: 110px;
+        left: 500px;
+    }
+    
+}
+
+@media only screen and (min-width: 800px) and (max-width: 1023px) {
+    #barraNavigazione {
+        margin-top: 15px;
+        float: left;
+        position: fixed;
+        z-index: 2;
+    }
+    nav ol, nav li {
+        display: inline-block;
+        list-style-type: none;
+    }
+
+    nav ol {
+        -webkit-padding-start: 10px;
+    }
+
+    nav li {
+        padding-bottom: 10px;
+        padding-top: 10px;
+        padding-left: 5px;
+        padding-right: 5px;
+        margin-left: 0px;
+        border-right: 2px solid brown;
+        border-left: 2px solid brown;
+        border-bottom: 2px solid brown;
+        border-radius: 5px;
+        box-shadow: 3px 6px 3px 0px rgba(0,0,0,0.62);
+        text-align: center;
+        font-size: 17px;
+        width: 100px;
+        background-color: white;
+    }
+    
+    .titolo {
+        width: 180px;
+        margin-right: 20px;
+        font-weight: bold;
+        margin-left: 0px;
+    }
+    
+    #sidebar1 {
+        width: 180px;
+        height: auto;
+        float: left;
+        padding: 5px;
+        margin-top: 100px;
+        margin-left: 10px;
+        margin-bottom: 20px;
+        border: 2px solid brown;
+        border-radius: 5px;
+        box-shadow: 3px 6px 3px 0px rgba(0,0,0,0.62);
+        font-weight: bold;
+        background-color: white;
+        font-size: 12px;
+    }
+    
+    #content {
+        float: left;
+        width: 500px;
+        margin-top: 100px;
+        margin-left: 25px;
+        background-color: white;
+    }
+    
+    .imgdescr {
+        width: 70%;
+    }
+
+    .imgpost {
+        width: 70%;
+    }
+    
+    #formprofilo {
+        height: 400px;
+    }
+    
+    label.labelprof {
+        width: 181px;
+        margin-left: 40px;
+    }
+    
+    input.inputprof {
+        font-size: 16px;
+    }
+    
+    input#data {
+        width: 195px;
+    }
+    
+    input#bottoneinvio {
+        width: 400px;
+        margin-left: 50px;
+    }
+    
+    #formprofilo.formlogin {
+        position: absolute;
+        top: 90px;
+        left: 232px;
+        width: 465px;
+        height: 250px;
+        background-color: white;
+    }
+    
+    div#WarningLogin {
+        position: absolute;
+        top: 110px;
+        left: 350px;
+    }
+    
+    #userlogin.labellogin, #pswlogin.labellogin {
+        margin-left: 20px;
+    }
+    
+    #bottoneinvio.buttonlogin {
+        margin-left: 27px;
+    }
+    
+    #clear.clearLogin {
+        height: 326px;
+    }
+    
+    #clear.clearProfilo {
+        height: 565px;
+    }
+    
+    div#modifMsg {
+        position: absolute;
+        top: 110px;
+        left: 350px;
+    }
+    
+}
+
+@media only screen and (min-width: 481px) and (max-width: 799px) {
+    #barraNavigazione {
+        margin-top: 15px;
+        float: left;
+        z-index: 2;
+    }
+    nav ol, nav li {
+        display: inline-block;
+        list-style-type: none;
+    }
+
+    nav ol {
+        -webkit-padding-start: 0px;
+    }
+
+    nav li {
+        padding-bottom: 10px;
+        padding-top: 10px;
+        padding-left: 5px;
+        padding-right: 5px;
+        margin-left: 0px;
+        border-right: 2px solid brown;
+        border-left: 2px solid brown;
+        border-bottom: 2px solid brown;
+        border-radius: 5px;
+        box-shadow: 3px 6px 3px 0px rgba(0,0,0,0.62);
+        text-align: center;
+        font-size: 17px;
+        width: 100px;
+        background-color: white;
+        float: left;
+    }
+    
+    .titolo {
+        width: 214px;
+        margin-right: 20px;
+        font-weight: bold;
+        margin-left: 0px;
+        display: block;
+    }
+    
+    nav li.primanav {
+        clear: left;
+    }
+    
+    nav li.terzanav {
+        clear: left;
+    }
+    
+    #sidebar1 {
+        display: inline-block;
+        position: absolute;
+        top: 35px;
+        left: 223px;
+        width: auto;
+        height: auto;
+        padding: 5px;;
+        margin-left: 10px;
+        margin-bottom: 20px;
+        border: 2px solid brown;
+        border-radius: 5px;
+        box-shadow: 3px 6px 3px 0px rgba(0,0,0,0.62);
+        font-weight: bold;
+        background-color: white;
+        font-size: 10px;
+    }
+    
+    #sidebar1 h2 {
+        -webkit-margin-before: 5px;
+        -webkit-margin-after: 5px;
+    }
+    
+    a.amici {
+        display: inline-block;
+        -webkit-margin-before: 5px;
+        -webkit-margin-after: 5px;
+    }
+    
+    p.gruppo1, p.gruppo2 {
+        display: inline-block;
+    }
+    
+    div#content {
+        float: left;
+        width: 100%;
+        background-color: white;
+        margin-top: 90px;
+    }
+    
+    .imgdescr {
+        width: 100%;
+    }
+
+    .imgpost {
+        width: 60%;
+    }
+    
+    #formprofilo {
+        height: 350px;
+    }
+    
+    label.labelprof {
+        width: auto;
+        margin-left: 0px;
+        margin-right: 3px;
+    }
+    
+    div > label.labelprof {
+        padding-right: 3px;
+    }
+    
+    div input.inputprof {
+        font-size: 16px;
+        float: right;
+        width: 144px;
+        margin-left: 5px;
+    }
+    
+    input#data {
+        width: 144px;
+    }
+    
+    form input#bottoneinvio {
+        width: 350px;
+        display: block;
+        margin: 0 auto;
+        float: none;
+    }
+    
+    div nav.navint ul {
+        display: inline-block;
+        -webkit-padding-start: 0px;
+        -webkit-margin-after: 1px;;
+    }
+    
+    #navInterno li {
+        display: inline-block;
+        margin: 1px;
+        font-size: 13px;
+        width: 100%;
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+    
+    #formprofilo.formlogin {
+        height: 200px;
+    }
+    
+    #page > #footer.footerLogin {
+        margin-top: 155px;
+    }
+    
+    div#WarningLogin {
+        position: absolute;
+        top: 230px;
+        left: 120px;
+    }
+    
+    div#modifMsg {
+        position: absolute;
+        top: 230px;
+        left: 120px;
+    }
+    
+}
+
+@media only screen and (max-width: 480px) {
+    #barraNavigazione {
+        margin-top: 25px;
+        float: left;
+        z-index: 2;
+    }
+    nav ol, nav li {
+        display: block;
+        list-style-type: none;
+    }
+
+    nav ol {
+        -webkit-padding-start: 0px;
+    }
+
+    nav li {
+        padding-bottom: 10px;
+        padding-top: 10px;
+        padding-left: 5px;
+        padding-right: 5px;
+        margin-left: 0px;
+        border-right: 2px solid brown;
+        border-left: 2px solid brown;
+        border-bottom: 2px solid brown;
+        border-radius: 5px;
+        box-shadow: 3px 6px 3px 0px rgba(0,0,0,0.62);
+        text-align: center;
+        font-size: 17px;
+        width: 100px;
+        background-color: white;
+    }
+    
+    .titolo {
+        display: none;
+    }
+    
+    #sidebar1 {
+        display: inline-block;
+        position: absolute;
+        top: 35px;
+        left: 110px;
+        width: auto;
+        height: auto;
+        padding: 5px;;
+        margin-left: 10px;
+        margin-bottom: 20px;
+        border: 2px solid brown;
+        border-radius: 5px;
+        box-shadow: 3px 6px 3px 0px rgba(0,0,0,0.62);
+        font-weight: bold;
+        background-color: white;
+        font-size: 10px;
+    }
+    
+    #sidebar1 h2 {
+        -webkit-margin-before: 5px;
+        -webkit-margin-after: 5px;
+    }
+    
+    p.gruppo1, p.gruppo2 {
+        display: inline-block;
+    }
+    
+    #content {
+        float: left;
+        width: 100%;
+        background-color: white;
+    }
+    
+    .imgdescr {
+        width: 100%;
+    }
+
+    .imgpost {
+        width: 70%;
+    }
+    
+    #formprofilo {
+        height: 350px;
+    }
+    
+    label.labelprof {
+        width: auto;
+        margin-left: 0px;
+        margin-right: 3px;
+    }
+    
+    div > label.labelprof {
+        padding-right: 3px;
+    }
+    
+    div input.inputprof {
+        font-size: 16px;
+        float: right;
+        width: 144px;
+        margin-left: 5px;
+    }
+    
+    input#data {
+        width: 144px;
+    }
+    
+    form input#bottoneinvio {
+        width: 350px;
+        display: block;
+        margin: 0 auto;
+        float: none;
+    }
+    
+    div nav.navint ul {
+        display: inline-block;
+        -webkit-padding-start: 0px;
+    }
+    
+    #navInterno li {
+        display: inline-block;
+        margin: 1px;
+        font-size: 13px;
+        width: 100%;
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+    
+    #formprofilo.formlogin {
+        height: 200px;
+    }
+    
+    #page > #footer.footerLogin {
+        margin-top: 154px;
+    }
+    
+    #page > #footer {
+        font-size: 14px;
+    }
+    
+    div#WarningLogin {
+        position: absolute;
+        top: 240px;
+        left: 100px;
+    }
+    
+    div#modifMsg {
+        position: absolute;
+        top: 240px;
+        left: 100px;
+    }
+}
+
+
+body {
+    margin: 3px;
+}
+
+#page {
+    background-color: #f9f9eb;
+    font-family: "Georgia", "Utopia", "Palatino", "Palatino Linotype", serif;
+    font-size: 15px;
+}
+
+#header {
+    height: 40px;
+    width: 100%;
+    position: fixed;
+    z-index: 3;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    border: 2px solid brown;
+    border-radius: 5px;
+}
+
+
+
+nav a:link {
+    color: black;
+    background-color: white;
+}
+
+nav a:visited {
+    color: black;
+    background-color: white;
+}
+
+nav a:hover {
+    font-weight: bold;
+    background-color: white;
+}
+
+.navAttuale a:visited {
+    background-color: #B97D5E;
+    color: white;
+}
+
+li.navAttuale {
+    background-color: #B97D5E;
+}
+
+#sidebar1 h2 {
+    text-decoration: underline;
+}
+
+#divPost {
+    border: 2px solid brown;
+    border-radius: 5px;
+    box-shadow: 3px 6px 3px 0px rgba(0,0,0,0.62);
+    margin-bottom: 10px;
+    padding-right: 5px;
+    padding-bottom: 10px;
+    display: block;
+}
+
+div.nomeprofilo {
+    font-weight: bold;
+    margin-left: 90px;
+    clear: right;
+}
+
+div.imgprofilo {
+    float: left;
+}
+
+div.datapost {
+    clear: left;
+    margin-left: 90px;
+    font-style: italic;
+    font-size: 18px;
+}
+
+div.datapost a:link {
+    font-style: normal;
+}
+
+#clear:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+#footer {
+    background-color: #B97D5E;
+    color: white;
+    text-align: center;
+    font-weight: bold;
+    font-size: 18px;
+    border: 2px solid brown;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+#formprofilo {
+    display: block;
+    border: 2px solid brown;
+    border-radius: 5px;
+    box-shadow: 3px 6px 3px 0px rgba(0,0,0,0.62);
+}
+
+label.labelprof {
+    float: left;
+    clear: left;
+    font-weight: bold;
+    padding: 10px;
+}
+
+input.inputprof {
+    float: left;
+    clear: right;
+    margin: 10px;
+    margin-top: 8px;
+    border: 1px solid;
+    box-shadow: 3px 6px 3px 0px rgba(0,0,0,0.62);
+}
+
+input#bottoneinvio {
+    float: left;
+    clear: both;
+    height: 40px;
+    margin-top: 20px;
+    background-color: #B97D5E;
+    font-weight: bold;
+    font-size: 18px;
+    color: white;
+    border: 2px solid brown;
+    border-radius: 5px;
+    box-shadow: 3px 6px 3px 0px rgba(0,0,0,0.62);
+}
+
+#bottoneinvio:active {
+  position: relative;
+  top: 1px;
+}
+
+#bottoneinvio:hover {
+    cursor: pointer;
+    font-size: 22px;
+}
+
+#userlogin {
+    margin-top: 50px;
+}
+
+#inpuser {
+    margin-top: 50px;
+}
+
+#footer.footerLogin {
+    margin-top: 250px;
+}
+
+nav.navint li {
+    border-top: 2px solid brown;
+    border-radius: 5px;
+    margin: 15px;
+}
+
+nav.navint ul {
+    
+    -webkit-padding-start: 20px;
+}
+
+#descr {
+    border: 2px solid brown;
+    border-radius: 5px;
+    box-shadow: 3px 6px 3px 0px rgba(0,0,0,0.62);
+    font-size: 18px;
+}
+
+p.descrizione {
+    text-align: justify;
+    padding: 10px;
+}
+
+#descr h2 {
+    text-decoration: underline;
+    text-align: center;
+}
+
+#descr img {
+    display: block;
+    margin: 0 auto;
+}
+
+.navint h2 {
+    text-align: center;
+}
+
+#nonloggato {
+    color: red;
+    text-align: center;
+    font-weight: bold;
+    background-color: #f9f9eb;
+}
+
+#WarningLogin {
+    color: red;
+    text-align: center;
+    font-weight: bold;
+    background-color: white;
+}
+
+#modifMsg {
+    color: red;
+    text-align: center;
+    font-weight: bold;
+    background-color: white;
+}
+
+#primodiv {
+    margin-top: 20px;
+}
+
+#listaAmici {
+    display: inline-block;
+    clear: right;
+    -webkit-padding-start: 0px;
+    
+}
+
+#listaAmici li{
+    list-style: none;
+}
+
+#inserisciPost {
+    border: 2px solid brown;
+    border-radius: 5px;
+    box-shadow: 3px 6px 3px 0px rgba(0,0,0,0.62);
+    height: 200px;
+    margin-bottom: 20px;
+}
+
+#conferma {
+        border: 2px solid brown;
+        border-radius: 5px;
+        box-shadow: 3px 6px 3px 0px rgba(0,0,0,0.62);
+        height: 200px;
+        margin-bottom: 20px;
+    }
+    
+    #formBacheca{
+        font-weight: bold;
+        
+    }
+    
+    #finalSubmit{
+        background-color: #B97D5E;
+        font-weight: bold;
+        font-size: 16px;
+        color: white;
+        border: 2px solid brown;
+        border-radius: 5px;
+        box-shadow: 3px 6px 3px 0px rgba(0,0,0,0.62);
+        margin-left: 10px;
+        float: left;
+        clear: both;
+    }
+    
+    #finalSubmit:active {
+    position: relative;
+    top: 1px;
+  }
+
+  #finalSubmit:hover {
+      cursor: pointer;
+      font-size: 18px;
+  }
+
+.labelPost{
+    font-weight: bold;
+    float: left;
+    clear: left;
+    margin: 8px;
+    margin-left: 10px;
+    margin-top: 0px;
+}
+
+#textArea{
+    display: block;
+    clear: both;
+    margin: 8px;
+    margin-left: 10px;
+    float: left;
+    
+}
+
+#submitPost{
+    background-color: #B97D5E;
+    font-weight: bold;
+    font-size: 16px;
+    color: white;
+    border: 2px solid brown;
+    border-radius: 5px;
+    box-shadow: 3px 6px 3px 0px rgba(0,0,0,0.62);
+    margin-left: 10px;
+    float: left;
+    clear: both;
+}
+
+#submitPost:active {
+  position: relative;
+  top: 1px;
+}
+
+#submitPost:hover {
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.inputPost{
+    margin: 8px;
+    margin-top: 0px;
+    margin-right: 300px;
+    float: right;
+    clear: right;
+}
+
+
+
+
+
+
+
+/*
+Inserisco queste icone tramite :before perchè sono icone che compaiono
+alla sinistra di ogni utente "amico" o di ogni "gruppo". Non portano informazione e con
+l'aumentare degli utenti e dei gruppi appesantirebbero il codice html.
+*/
+#listaAmici li a:before {
+    content: url(/M3/IMG/usericon.png);
+    margin-right: 5px;
+}
+
+p.gruppo1:before {
+    content: url(/M3/IMG/dsicon.png);
+    margin-right: 5px;
+}
+
+p.gruppo2:before {
+    content: url(/M3/IMG/csicon.png);
+    margin-right: 5px;
+}
+
