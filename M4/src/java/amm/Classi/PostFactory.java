@@ -146,4 +146,36 @@ public class PostFactory {
         return null;
     }
     
+    public void addPost(Post post){
+        
+        try{
+                        
+            Connection conn = DriverManager.getConnection(connectionString, "amm", "amm");
+                        
+            String query = 
+                            "insert into post (post_id, post_idProprietario,"
+                            + " post_idBacheca, post_text, post_img, post_link)"
+                            + " values "
+                            + "(default,"
+                            + "?, ?, ?, ?, ?)";
+
+                        // Prepared Statement
+            PreparedStatement stmt = conn.prepareStatement(query);
+            
+            stmt.setInt(1, post.getUser().getId());
+            stmt.setInt(2, post.getIdBacheca());
+            stmt.setString(3, post.getTextPost());
+            stmt.setString(4, post.getUrlImg());
+            stmt.setString(5, post.getLinkPost());
+            
+            int rows = stmt.executeUpdate();
+            
+            stmt.close();
+            conn.close();
+                        
+        }catch (SQLException e) {
+            e.printStackTrace();
+        }
+    
+    }
 }

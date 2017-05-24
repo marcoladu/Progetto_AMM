@@ -82,44 +82,14 @@ public class Profilo extends HttpServlet {
                     temp.setData(request.getParameter("data"));
                     temp.setPsw(request.getParameter("psw"));
                     
-                    try{
-                        
-                        Connection conn = DriverManager.getConnection(dbConnection, "amm", "amm");
-                        
-                        String query = 
-                                  "update utenti set "
-                                + "utenti_nome = ?,"
-                                + "utenti_cognome = ?,"
-                                + "utenti_urlImg = ?,"
-                                + "utenti_frase = ?,"
-                                + "utenti_data = ?,"
-                                + "utenti_password = ? "
-                                + "where utenti_id = ?";
-
-                        // Prepared Statement
-                        PreparedStatement stmt = conn.prepareStatement(query);
-                        
-                        stmt.setString(1, temp.getNomeUtente());
-                        stmt.setString(2, temp.getCognomeUtente());
-                        stmt.setString(3, temp.getUrlImg());
-                        stmt.setString(4, temp.getFraseBenv());
-                        stmt.setString(5, temp.getData());
-                        stmt.setString(6, temp.getPsw());
-                        
-                        int rows = stmt.executeUpdate();
-                        
-                        if(rows == 1){
-                            request.setAttribute("modificatoMessage", true);
-                        }else {
-                            request.setAttribute("modificatoMessage", false);
-                        }
-                        
-                    }catch (SQLException e) {
-                        e.printStackTrace();
-                    }
+                    UtentiFactory.getInstance().modUtente(temp);
+                    
+                    request.setAttribute("modificatoMessage", true);
                 }
                 
-                try{
+                request.setAttribute("user", user);
+                
+                /*try{
                         // path, username, password
                         Connection conn = DriverManager.getConnection(dbConnection, "amm", "amm");
 
@@ -157,7 +127,7 @@ public class Profilo extends HttpServlet {
 
                     }catch (SQLException e) {
                         e.printStackTrace();
-                    }
+                    }*/
             
                 request.getRequestDispatcher("profilo.jsp").forward(request, response);
             }else {

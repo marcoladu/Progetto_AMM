@@ -11,10 +11,8 @@ import amm.Classi.UtentiFactory;
 import amm.Classi.Utenti;
 import java.util.ArrayList;
 import java.io.IOException;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -37,27 +35,21 @@ public class Bacheca extends HttpServlet {
      * @throws IOException if an I/O error occurs
      */
     
-    private static Bacheca temp = new Bacheca();
+    private static final String JDBC_DRIVER = "org.apache.derby.jdbc.EmbeddedDriver";
+    private static final String DB_CLEAN_PATH = "../../web/WEB-INF/db/ammdb";
+    private static final String DB_BUILD_PATH = "WEB-INF/db/ammdb";
     
-    public static Bacheca getInstance(){
-        return temp;
-    }
-    
-    public Bacheca() {
-        
-    }
-    
-    //Gestione DB
-    private String connectionString;
-    
-    public void setConnectionString(String s){
-	this.connectionString = s;
-    }
-    
-    public String getConnectionString(){
-            return this.connectionString;
-    }
-    //Fine gestione DB
+    @Override
+   public void init(){
+       String dbConnection = "jdbc:derby:" + this.getServletContext().getRealPath("/") + DB_BUILD_PATH;
+       try {
+           Class.forName(JDBC_DRIVER);
+       } catch (ClassNotFoundException ex) {
+           Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
+       }
+       UtentiFactory.getInstance().setConnectionString(dbConnection);
+       PostFactory.getInstance().setConnectionString(dbConnection);
+   }
     
     
     
@@ -120,36 +112,15 @@ public class Bacheca extends HttpServlet {
             if(request.getParameter("Completato") != null){
                 
                 int idTemp = Integer.parseInt(request.getParameter("idBacheca"));
-                    
-                try{
-                        
-                        Connection conn = DriverManager.getConnection(connectionString, "amm", "amm");
-                        
-                        String query = 
-                                  "insert into post (post_id, post_idProprietario,"
-                                + " post_idBacheca, post_text, post_img, post_link)"
-                                + " values "
-                                + "(default,"
-                                + "?, ?, ?, ?, ?)";
-
-                        // Prepared Statement
-                        PreparedStatement stmt = conn.prepareStatement(query);
-                        
-                        stmt.setInt(1, id);
-                        stmt.setInt(2, idTemp);
-                        stmt.setString(3, request.getParameter("textArea"));
-                        stmt.setString(4, request.getParameter("urlImgPost"));
-                        stmt.setString(5, request.getParameter("urlLink"));
-                        
-                        int rows = stmt.executeUpdate();
-                        
-                        if(rows == 1){
-                            request.getRequestDispatcher("bacheca.jsp").forward(request, response);
-                        }
-                        
-                    }catch (SQLException e) {
-                        e.printStackTrace();
-                    }
+                
+                Post tempPost = new Post();
+                tempPost.setUser(UtentiFactory.getInstance().getPerId(id));
+                tempPost.setIdBacheca(idTemp);
+                tempPost.setTextPost(request.getParameter("textArea"));
+                tempPost.setImgPost(request.getParameter("urlImgPost"));
+                tempPost.setLinkPost(request.getParameter("urlLink"));
+                
+                PostFactory.getInstance().addPost(tempPost);
                     
             }
             

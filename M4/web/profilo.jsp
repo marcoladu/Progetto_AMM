@@ -49,7 +49,7 @@
 
                                 <div>
                                     <label for="url" class="labelprof">URL Immagine Profilo</label>
-                                    <input type="url" name="url" id="url" class="inputprof" value="${user.urlImg}">
+                                    <input type="text" name="url" id="url" class="inputprof" value="${user.urlImg}">
                                 </div>
 
                                 <div>
