@@ -95,15 +95,15 @@ and open the template in the editor.
     }
     
     #clear.clearLogin {
-        height: 353px;
+        height: auto;
     }
 
     #clear.clearProfilo {
-        height: 593px;
+        height: auto;
     }
     
     #clear.clearBacheca {
-        height: 593px;
+        height: auto;
     }
     
     #formprofilo.formlogin {
@@ -914,17 +914,17 @@ alla sinistra di ogni utente "amico" o di ogni "gruppo". Non portano informazion
 l'aumentare degli utenti e dei gruppi appesantirebbero il codice html.
 */
 #listaAmici li a:before {
-    content: url(/M3/IMG/usericon.png);
+    content: url(/M4/IMG/usericon.png);
     margin-right: 5px;
 }
 
 p.gruppo1:before {
-    content: url(/M3/IMG/dsicon.png);
+    content: url(/M4/IMG/dsicon.png);
     margin-right: 5px;
 }
 
 p.gruppo2:before {
-    content: url(/M3/IMG/csicon.png);
+    content: url(/M4/IMG/csicon.png);
     margin-right: 5px;
 }
 
